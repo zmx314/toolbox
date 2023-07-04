@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="root" prefHeight="700.0" prefWidth="1024.0"
+            stylesheets="/com/zxm/toolbox/css/group-ticket-pdf.css"
+            xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zxm.toolbox.controller.GroupTicketPDFController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+        <items>
+            <Label text="团体记录文件">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="pathText" prefHeight="23.0" prefWidth="392.0" />
+          <Button mnemonicParsing="false" onAction="#open" text="浏览" />
+            <Button fx:id="previewBtn" mnemonicParsing="false" onAction="#preview" text="预览" />
+            <Button fx:id="exportBtn" mnemonicParsing="false" onAction="#export" text="导出" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+             <!--group对象是为了实现group缩放-->
+            <Group>
+               <children>
+                  <VBox fx:id="vBox" prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </Group>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <!--<Button fx:id="zoomInBtn" mnemonicParsing="false" text="+" />-->
+            <Label fx:id="scalingValue" prefWidth="40.0" text="50%"/>
+            <!-- Min表示的数据的最小值,Max表示的数据的最大值,Value设置当前值-->
+            <!--ShowTickLabels是否显示刻度值,ShowTickMarks(true)是否显示刻度线-->
+            <!--MajorTickUnit(4)刻度Mark之间的单位距离被设置为了40-->
+            <!--MinorTickCount(5)每两个主刻度之间都被设置分为了5个小刻度-->
+            <!--BlockIncrement(10)Thumb将会向点击位置的方向移动10个单元-->
+            <Slider fx:id="scaling" majorTickUnit="50" max="1" minorTickCount="5" value="1"/>
+            <Label text="缩放比例" />
+            <!--<Button fx:id="zoomOutBtn" mnemonicParsing="false" text="-" />-->
+        </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>

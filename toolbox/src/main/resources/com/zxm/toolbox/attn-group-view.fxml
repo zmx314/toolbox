@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zxm.toolbox.controller.AttnGroupController">
+    <center>
+        <TableView fx:id="table" prefHeight="700.0" prefWidth="908.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="idxCol" prefWidth="50.0" text="行号" />
+                <TableColumn fx:id="idCol" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="nameCol" prefWidth="100.0" text="考勤组名称" />
+                <TableColumn fx:id="dateCellCol" prefWidth="75.0" text="日期单元格" />
+                <TableColumn fx:id="startCellCol" prefWidth="75.0" text="起始单元格" />
+                <TableColumn fx:id="dutyCellCol" prefWidth="75.0" text="出勤单元格" />
+                <TableColumn fx:id="timeCellCol" prefWidth="100.0" text="上班时间单元格" />
+                <TableColumn fx:id="manHourCellCol" prefWidth="75.0" text="工时单元格" />
+                <TableColumn fx:id="offCellCol" prefWidth="75.0" text="休息单元格" />
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox prefHeight="700.0" prefWidth="299.0" BorderPane.alignment="CENTER">
+            <children>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="ID">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="idText" disable="true">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="考勤组名">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </Label>
+                  <TextField fx:id="nameText" disable="true">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </TextField>
+               </children>
+            </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="100.0" text="考勤表年月单元格">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="dateCellText" disable="true">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="100.0" text="考勤起始单元格">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="startCellText" disable="true">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="出勤单元格">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="dutyCellText" disable="true">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="上班时间单元格">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="timeCellText" disable="true">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="工时单元格">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="manHourText" disable="true">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="休息单元格">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="offCellText" disable="true">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#cancel" text="取消">
+                            <FlowPane.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </FlowPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#save" text="保存">
+                            <FlowPane.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </FlowPane.margin>
+                        </Button>
+                    </children>
+                </FlowPane>
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </VBox>
+    </right>
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Button mnemonicParsing="false" onAction="#add" text="添加" />
+                <Button mnemonicParsing="false" onAction="#edit" text="修改" />
+                <Button mnemonicParsing="false" onAction="#del" text="删除" />
+            </items>
+        </ToolBar>
+    </top>
+</BorderPane>

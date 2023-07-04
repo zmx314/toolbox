@@ -1,0 +1,30 @@
+/*
+vBox的width属性和imageView的width：
+vBox的pref-width属性无效果，
+vBox的min-width有效果，
+imageView的width熟悉有效果，
+最后的显示效果：
+imageView的width和vBox的min-width，两者取大的那个，
+*/
+.ticket {
+    -fx-min-width: 297px;
+    -fx-min-height: 421px;
+    -fx-max-width: 297px;
+    -fx-max-height: 421px;
+    -fx-background-color: white;
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-alignment: top-center;
+    -fx-padding: 10px,10px,10px,10px;
+}
+/*font-size和pref-width两个属性，pref-width优先，当pref-width比较小的时候，font-size调多大都不行
+label的pre-width属性再大都不能超过vBox的最小宽度，
+*/
+.ticket-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: normal;
+    -fx-alignment: center;
+    -fx-pref-width: 295px;
+    -fx-padding: 5px;
+}

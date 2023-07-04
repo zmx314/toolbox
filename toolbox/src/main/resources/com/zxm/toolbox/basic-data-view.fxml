@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@css/basic-data-view.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zxm.toolbox.controller.BasicDataController">
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addAction" text="增加" />
+                <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editAction" text="修改" />
+                <Button fx:id="delBtn" mnemonicParsing="false" onAction="#delAction" text="删除" />
+            </items>
+        </ToolBar>
+    </top>
+   <right>
+      <AnchorPane id="optionPane" prefHeight="560.0" prefWidth="300.0" style="-fx-border-style: solid;                         -fx-border-width: 0px 1px 0px 1px;                         -fx-border-color: gray;" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane alignment="CENTER" layoutY="14.0" prefHeight="40.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="50.0" text="类型">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </Label>
+                  <ChoiceBox fx:id="choiceBox" prefWidth="150.0">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </ChoiceBox>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" layoutY="54.0" prefHeight="40.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="50.0" text="ID">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </Label>
+                  <TextField fx:id="idText" editable="false" prefHeight="26.0" prefWidth="150.0">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </TextField>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="40.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="50.0" text="名字">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </Label>
+                  <TextField fx:id="nameText" editable="true" prefHeight="26.0" prefWidth="150.0">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </TextField>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" layoutX="1.0" layoutY="134.0" prefHeight="40.0" prefWidth="300.0">
+               <children>
+                   <Button fx:id="cnlBtn" mnemonicParsing="false" onAction="#cancelAction" prefHeight="26.0" prefWidth="70.0" text="取消">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </Button>
+                   <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveAction" prefHeight="26.0" prefWidth="70.0" text="保存">
+                     <FlowPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </FlowPane.margin>
+                  </Button>
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+          <Accordion fx:id="accordion" prefHeight="337.0" prefWidth="343.0" BorderPane.alignment="CENTER">
+              <panes>
+                  <TitledPane fx:id="titledPane1" animated="false" text="公司">
+                      <content>
+                          <GridPane>
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <padding>
+                                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                              </padding>
+                              <children>
+                                  <TableView id="companyTable" fx:id="companyTable" prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                          <TableColumn fx:id="companyIdxCol" editable="false" prefWidth="50.0" text="序号" />
+                                          <TableColumn fx:id="companyIdCol" editable="false" prefWidth="50.0" text="ID" />
+                                          <TableColumn fx:id="companyNameCol" editable="false" prefWidth="75.0" text="公司名" />
+                                      </columns>
+                                  </TableView>
+                              </children>
+                          </GridPane>
+                      </content>
+                  </TitledPane>
+                  <TitledPane fx:id="titledPane2" animated="false" text="部门">
+                      <content>
+                          <GridPane>
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <padding>
+                                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                              </padding>
+                              <children>
+                                  <TableView id="departmentTable" fx:id="departmentTable" prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                          <TableColumn fx:id="departmentIdxCol" editable="false" prefWidth="50.0" text="序号" />
+                                          <TableColumn fx:id="departmentIdCol" editable="false" prefWidth="50.0" text="ID" />
+                                          <TableColumn fx:id="departmentNameCol" editable="false" prefWidth="75.0" text="部门名" />
+                                      </columns>
+                                  </TableView>
+                              </children>
+                          </GridPane>
+                      </content>
+                  </TitledPane>
+                  <TitledPane fx:id="titledPane3" animated="false" text="子部门">
+                      <content>
+                          <GridPane>
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <padding>
+                                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                              </padding>
+                              <children>
+                                  <TableView id="sectionTable" fx:id="sectionTable" prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                          <TableColumn fx:id="sectionIdxCol" editable="false" prefWidth="75.0" text="序号" />
+                                          <TableColumn fx:id="sectionIdCol" editable="false" prefWidth="75.0" text="ID" />
+                                          <TableColumn fx:id="sectionNameCol" editable="false" prefWidth="75.0" text="子部门名" />
+                                      </columns>
+                                  </TableView>
+                              </children>
+                          </GridPane>
+                      </content>
+                  </TitledPane>
+                  <TitledPane fx:id="titledPane4" animated="false" text="职位">
+                      <content>
+                          <GridPane>
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <padding>
+                                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                              </padding>
+                              <children>
+                                  <TableView id="positionTable" fx:id="positionTable" prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                          <TableColumn fx:id="positionIdxCol" editable="false" prefWidth="75.0" text="序号" />
+                                          <TableColumn fx:id="positionIdCol" editable="false" prefWidth="75.0" text="ID" />
+                                          <TableColumn fx:id="positionNameCol" editable="false" prefWidth="75.0" text="职位名" />
+                                      </columns>
+                                  </TableView>
+                              </children>
+                          </GridPane>
+                      </content>
+                  </TitledPane>
+              </panes>
+          </Accordion>
+   </center>
+</BorderPane>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zxm.toolbox.controller.ShippingCompanyController">
+    <center>
+        <TableView fx:id="table" prefHeight="700.0" prefWidth="908.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="idxCol" prefWidth="75.0" text="行号" />
+                <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameCol" prefWidth="214.0" text="船属公司名" />
+                <TableColumn fx:id="groupCol" prefWidth="159.0" text="所属航线组" />
+                <TableColumn fx:id="typeCol" prefWidth="75" text="航线类型" />
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox prefHeight="700.0" prefWidth="299.0" BorderPane.alignment="CENTER">
+            <children>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="75.0" text="ID">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="idText" disable="true" editable="true" prefWidth="150.0">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="75.0" text="船属公司名">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="nameText" disable="true" editable="true" prefWidth="150.0">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="75.0" text="所属航线组">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <ComboBox fx:id="groupComb" disable="true" prefHeight="26.0" prefWidth="150.0">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </ComboBox>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefWidth="75.0" text="航线类型">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <ComboBox fx:id="typeComb" disable="true" prefHeight="26.0" prefWidth="150.0">
+                            <FlowPane.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </FlowPane.margin>
+                        </ComboBox>
+                    </children>
+                </FlowPane>
+                <FlowPane alignment="CENTER" prefHeight="42.0" prefWidth="299.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#cancel" text="取消">
+                            <FlowPane.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </FlowPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#save" text="保存">
+                            <FlowPane.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </FlowPane.margin>
+                        </Button>
+                    </children>
+                </FlowPane>
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </VBox>
+    </right>
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Button mnemonicParsing="false" onAction="#add" text="添加" />
+                <Button mnemonicParsing="false" onAction="#edit" text="修改" />
+                <Button mnemonicParsing="false" onAction="#del" text="删除" />
+            </items>
+        </ToolBar>
+    </top>
+</BorderPane>

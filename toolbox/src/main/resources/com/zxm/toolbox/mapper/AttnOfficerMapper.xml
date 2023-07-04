@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个指定的Dao/Mapper接口-->
+<mapper namespace="com.zxm.toolbox.dao.AttnOfficerDao">
+    <!-- 查询所有员工信息 -->
+    <select id="selectAll"
+            resultType="com.zxm.toolbox.pojo.attn.AttnOfficer">
+        select * from attn_officer
+    </select>
+    <select id="selectById" parameterType="int"
+            resultType="com.zxm.toolbox.pojo.attn.AttnOfficer">
+        select * from attn_officer where id=#{id}
+    </select>
+    <select id="selectByEmployeeId" parameterType="String"
+            resultType="com.zxm.toolbox.pojo.attn.AttnOfficer">
+        select * from attn_officer where employee_id=#{employeeId}
+    </select>
+    <!-- 添加一个员工 -->
+    <insert id="save" parameterType="com.zxm.toolbox.pojo.attn.Employee">
+        insert into attn_officer (id,employee_id,company_name,department_name,position_name,attn_group_name)
+        values(#{id},#{name},#{company},#{department},#{position},#{group})
+    </insert>
+    <delete id="delete" parameterType="string">
+        delete from attn_officer where id = #{id}
+    </delete>
+    <update id="update" parameterType="com.zxm.toolbox.pojo.attn.Employee">
+        update attn_officer set name=#{name},company_name=#{company},department_name=#{department},
+                            position_name=#{position},attn_group_name=#{group} where id=#{id}
+    </update>
+</mapper>

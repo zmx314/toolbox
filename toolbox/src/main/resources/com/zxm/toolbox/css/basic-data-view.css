@@ -1,0 +1,19 @@
+/*设置公司表每列字体大小*/
+#companyTable {
+    -fx-font-size: 12px;
+}
+#departmentTable {
+    -fx-font-size: 12px;
+}
+#sectionTable {
+    -fx-font-size: 12px;
+}
+#positionTable {
+    -fx-font-size: 12px;
+}
+/*无效*/
+#optionPane {
+    -fx-border-style: solid;
+    -fx-border-width: 0px 0px 0px 1px;
+    -fx-border-color: gray;
+}
